@@ -1,0 +1,9 @@
+# /etc/hosts: Local Host Database
+
+127.0.0.1	localhost
+::1		localhost
+
+10.3.3.101 node-1
+10.3.3.102 node-2
+10.3.3.103 node-3
+

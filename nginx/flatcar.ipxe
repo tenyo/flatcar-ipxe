@@ -1,0 +1,15 @@
+#!ipxe
+
+# to pull from the web
+# set base-url http://stable.release.flatcar-linux.net/amd64-usr/current
+
+set base-url http://10.3.3.1:8000
+set ignition-url http://10.3.3.1:8000/${mac:hexhyp}/boot.ign
+
+echo Booting flatcar image with ignition ${ignition-url} ...
+echo
+
+kernel ${base-url}/flatcar/flatcar_production_pxe.vmlinuz initrd=flatcar_production_pxe_image.cpio.gz flatcar.first_boot=1 flatcar.autologin ignition.config.url=${ignition-url}
+initrd ${base-url}/flatcar/flatcar_production_pxe_image.cpio.gz
+boot
+

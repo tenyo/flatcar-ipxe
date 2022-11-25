@@ -1,0 +1,49 @@
+variant: flatcar
+version: 1.0.0
+
+kernel_arguments:
+  should_exist:
+    - flatcar.autologin
+  should_not_exist:
+    - quiet
+
+passwd:
+  users:
+    - name: core
+      ssh_authorized_keys:
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPZ9sD6uCBxgr1o29gtPlCJMYvNJPLg5i5xpr9wClCBf
+
+storage:
+  files:
+    - path: /opt/k8s_bootstrap.sh
+      mode: 0755
+      contents:
+        source: http://10.3.3.1:8000/scripts/k8s_bootstrap.sh
+    - path: /opt/k8s_init.sh
+      mode: 0755
+      contents:
+        source: http://10.3.3.1:8000/scripts/k8s_init.sh
+    - path: /etc/hosts
+      mode: 0644
+      overwrite: true
+      contents:
+        source: http://10.3.3.1:8000/etc_hosts
+
+    - path: /etc/hostname
+      mode: 0644
+      overwrite: true
+      contents:
+        inline: node-3
+    - path: /etc/systemd/network/static.network
+      mode: 0644
+      contents:
+        inline: |
+          [Match]
+          Name=en*
+          MACAddress=6c-2b-59-f5-a7-af
+
+          [Network]
+          Address=10.3.3.103/24
+          Gateway=10.3.3.1
+          DNS=1.1.1.1
+

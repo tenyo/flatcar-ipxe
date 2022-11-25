@@ -1,0 +1,28 @@
+---
+services:
+  dhcpd:
+    image: networkboot/dhcpd
+    network_mode: "host"
+    volumes:
+      - type: bind
+        source: "./dhcp"
+        target: "/data"
+
+  tftpd:
+    image: ftaeger/tftp-hpa-alpine
+    ports:
+      - 69:69/udp
+    volumes:
+      - type: bind
+        source: "./tftpboot"
+        target: "/var/tftpboot"
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8000:80"
+    volumes:
+      - type: bind
+        source: "./nginx"
+        target: "/usr/share/nginx/html"
+

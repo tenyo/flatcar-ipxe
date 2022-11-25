@@ -1,0 +1,42 @@
+{
+  "ignition": {
+    "version": "3.3.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPZ9sD6uCBxgr1o29gtPlCJMYvNJPLg5i5xpr9wClCBf"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "path": "/opt/install.sh",
+        "contents": {
+          "source": "http://10.3.3.1:8000/scripts/install.sh"
+        },
+        "mode": 493
+      },
+      {
+        "path": "/opt/config.ign",
+        "contents": {
+          "source": "http://10.3.3.1:8000/6c-2b-59-f5-a7-af/config.ign"
+        },
+        "mode": 420
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "contents": "[Unit]\nRequires=network-online.target\nAfter=network-online.target\n[Service]\nType=oneshot\nRestart=on-failure\nRemainAfterExit=yes\nExecStart=/opt/install.sh\n[Install]\nWantedBy=multi-user.target\n",
+        "enabled": true,
+        "name": "installer.service"
+      }
+    ]
+  }
+}

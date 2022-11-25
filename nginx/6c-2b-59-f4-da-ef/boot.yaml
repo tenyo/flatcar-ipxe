@@ -1,0 +1,36 @@
+variant: flatcar
+version: 1.0.0
+
+storage:
+  files:
+    - path: /opt/install.sh
+      mode: 0755
+      contents:
+        source: http://10.3.3.1:8000/scripts/install.sh
+    - path: /opt/config.ign
+      mode: 0644
+      contents:
+        source: http://10.3.3.1:8000/6c-2b-59-f4-da-ef/config.ign
+
+systemd:
+  units:
+    - name: installer.service
+      enabled: true
+      contents: |
+        [Unit]
+        Requires=network-online.target
+        After=network-online.target
+        [Service]
+        Type=oneshot
+        Restart=on-failure
+        RemainAfterExit=yes
+        ExecStart=/opt/install.sh
+        [Install]
+        WantedBy=multi-user.target
+
+passwd:
+  users:
+    - name: core
+      ssh_authorized_keys:
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPZ9sD6uCBxgr1o29gtPlCJMYvNJPLg5i5xpr9wClCBf
+
