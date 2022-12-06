@@ -37,6 +37,13 @@
         "mode": 493
       },
       {
+        "path": "/opt/k8s_rook-ceph.sh",
+        "contents": {
+          "source": "http://10.3.3.1:8000/scripts/k8s_rook-ceph.sh"
+        },
+        "mode": 493
+      },
+      {
         "overwrite": true,
         "path": "/etc/hosts",
         "contents": {

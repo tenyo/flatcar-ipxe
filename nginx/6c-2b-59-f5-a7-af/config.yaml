@@ -23,6 +23,10 @@ storage:
       mode: 0755
       contents:
         source: http://10.3.3.1:8000/scripts/k8s_init.sh
+    - path: /opt/k8s_rook-ceph.sh
+      mode: 0755
+      contents:
+        source: http://10.3.3.1:8000/scripts/k8s_rook-ceph.sh
     - path: /etc/hosts
       mode: 0644
       overwrite: true

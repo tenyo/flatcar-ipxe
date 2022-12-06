@@ -53,10 +53,3 @@ rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
 cilium install --version $CILIUM_VERSION
 
-# install rook-ceph
-
-helm repo add rook-release https://charts.rook.io/release
-#helm install --create-namespace --namespace rook-ceph rook-ceph rook-release/rook-ceph
-#helm install --create-namespace --namespace rook-ceph rook-ceph-cluster \
-#   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster
-
