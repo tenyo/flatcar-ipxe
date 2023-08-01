@@ -33,6 +33,13 @@ storage:
       contents:
         source: http://10.3.3.1:8000/etc_hosts
 
+    - path: /etc/selinux/config
+      mode: 0644
+      overwrite: true
+      contents:
+        inline: |
+          SELINUX=disabled
+
     - path: /etc/hostname
       mode: 0644
       overwrite: true

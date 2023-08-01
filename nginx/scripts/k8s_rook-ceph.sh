@@ -11,7 +11,7 @@ cat <<EOF | tee /tmp/rook-ceph-values.yaml
 ---
 cephClusterSpec:
   cephVersion:
-    image: quay.io/ceph/ceph:v17
+    image: quay.io/ceph/ceph:v18
   mon:
     count: 3
     allowMultiplePerNode: false
