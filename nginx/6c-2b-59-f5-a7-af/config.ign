@@ -25,21 +25,21 @@
       {
         "path": "/opt/k8s_bootstrap.sh",
         "contents": {
-          "source": "http://10.3.3.1:8000/scripts/k8s_bootstrap.sh"
+          "source": "http://10.1.1.11:8000/scripts/k8s_bootstrap.sh"
         },
         "mode": 493
       },
       {
         "path": "/opt/k8s_init.sh",
         "contents": {
-          "source": "http://10.3.3.1:8000/scripts/k8s_init.sh"
+          "source": "http://10.1.1.11:8000/scripts/k8s_init.sh"
         },
         "mode": 493
       },
       {
         "path": "/opt/k8s_rook-ceph.sh",
         "contents": {
-          "source": "http://10.3.3.1:8000/scripts/k8s_rook-ceph.sh"
+          "source": "http://10.1.1.11:8000/scripts/k8s_rook-ceph.sh"
         },
         "mode": 493
       },
@@ -47,7 +47,7 @@
         "overwrite": true,
         "path": "/etc/hosts",
         "contents": {
-          "source": "http://10.3.3.1:8000/etc_hosts"
+          "source": "http://10.1.1.11:8000/etc_hosts"
         },
         "mode": 420
       },
@@ -73,7 +73,7 @@
         "path": "/etc/systemd/network/static.network",
         "contents": {
           "compression": "",
-          "source": "data:,%5BMatch%5D%0AName%3Den*%0AMACAddress%3D6c-2b-59-f5-a7-af%0A%0A%5BNetwork%5D%0AAddress%3D10.3.3.103%2F24%0AGateway%3D10.3.3.1%0ADNS%3D1.1.1.1%0A"
+          "source": "data:,%5BMatch%5D%0AName%3Den*%0AMACAddress%3D6c-2b-59-f5-a7-af%0A%0A%5BNetwork%5D%0AAddress%3D10.1.1.103%2F24%0AGateway%3D10.1.1.1%0ADNS%3D1.1.1.1%0A"
         },
         "mode": 420
       }

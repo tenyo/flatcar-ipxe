@@ -18,20 +18,20 @@ storage:
     - path: /opt/k8s_bootstrap.sh
       mode: 0755
       contents:
-        source: http://10.3.3.1:8000/scripts/k8s_bootstrap.sh
+        source: http://10.1.1.11:8000/scripts/k8s_bootstrap.sh
     - path: /opt/k8s_init.sh
       mode: 0755
       contents:
-        source: http://10.3.3.1:8000/scripts/k8s_init.sh
+        source: http://10.1.1.11:8000/scripts/k8s_init.sh
     - path: /opt/k8s_rook-ceph.sh
       mode: 0755
       contents:
-        source: http://10.3.3.1:8000/scripts/k8s_rook-ceph.sh
+        source: http://10.1.1.11:8000/scripts/k8s_rook-ceph.sh
     - path: /etc/hosts
       mode: 0644
       overwrite: true
       contents:
-        source: http://10.3.3.1:8000/etc_hosts
+        source: http://10.1.1.11:8000/etc_hosts
 
     - path: /etc/selinux/config
       mode: 0644
@@ -54,7 +54,7 @@ storage:
           MACAddress=6c-2b-59-f4-da-ef
 
           [Network]
-          Address=10.3.3.102/24
-          Gateway=10.3.3.1
+          Address=10.1.1.102/24
+          Gateway=10.1.1.1
           DNS=1.1.1.1
 

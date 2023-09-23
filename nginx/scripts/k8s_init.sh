@@ -6,7 +6,7 @@ set -xe
 
 ARCH="amd64"
 DOWNLOAD_DIR="/opt/bin"
-CILIUM_VERSION="v1.14.0"
+CILIUM_VERSION="v1.14.2"
 
 sudo mkdir -p "$DOWNLOAD_DIR"
 

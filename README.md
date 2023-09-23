@@ -7,7 +7,7 @@ This is a really simple setup to get a bunch of bare metal machines at home boot
 - Docker, docker-compose
 - Butane (download from https://github.com/coreos/butane/releases)
 - Machines that can boot from iPXE
-- Some network planning (e.g. best to use a separate network for this, in this case I have `10.3.3.0/24` and a workstation that acts as the default gateway at `10.3.3.1`)
+- Some network planning (e.g. best to use a separate network for this, in this case I have `10.1.1.0/24`, default gateway `10.1.1.1` and a workstation running TFTP at `10.1.1.11`)
 
 ## Setup
 
